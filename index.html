@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuilderCat — Build on Base, one block at a time</title>
+  <meta name="description" content="BuilderCat ($BUILDERCAT) — the hardhat cat building on Base. 1B supply. Code. Build. Deploy. On Base." />
+  <meta property="og:title" content="BuilderCat — Build on Base" />
+  <meta property="og:description" content="The hardhat cat building on Base. Code. Build. Deploy. On Base." />
+  <meta property="og:image" content="assets/logo-256.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="assets/logo-256.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <a class="brand" href="#top">
+      <img src="assets/logo-256.png" alt="BuilderCat logo" width="40" height="40" />
+      <span>Builder<b>Cat</b></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#chart">Chart</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#buy">How to Buy</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="https://x.com/buildercatbase" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a>
+      <a class="btn btn-primary" href="https://app.uniswap.org/swap?outputCurrency=0xb2000000000000000000000Cc9a0b0D5Ccf89901&chain=base" target="_blank" rel="noopener">Buy $BUILDERCAT</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="badge"><span class="dot"></span> Live on Base</span>
+        <h1>Builder<span class="accent">Cat</span></h1>
+        <p class="tagline">The hardhat cat that just keeps shipping.<br /><b>Code. Build. Deploy. On Base.</b></p>
+        <div class="ticker-row">
+          <span class="chip">$BUILDERCAT</span>
+          <span class="chip chip-blue">Supply&nbsp;1,000,000,000</span>
+          <span class="chip">0% Tax</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary btn-lg" href="https://app.uniswap.org/swap?outputCurrency=0xb2000000000000000000000Cc9a0b0D5Ccf89901&chain=base" target="_blank" rel="noopener">Buy on Uniswap</a>
+          <a class="btn btn-outline btn-lg" href="#chart">View Chart</a>
+          <a class="btn btn-outline btn-lg" href="https://x.com/buildercatbase" target="_blank" rel="noopener">Follow 𝕏</a>
+        </div>
+        <div class="contract" role="group" aria-label="Contract address">
+          <span class="contract-label">CA</span>
+          <code id="ca">0xb2000000000000000000000Cc9a0b0D5Ccf89901</code>
+          <button id="copyBtn" class="copy-btn" type="button">Copy</button>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="assets/art/buildercat.png" alt="BuilderCat wearing a Base hoodie" class="float-a" />
+        <img src="assets/logo.png" alt="BuilderCat face" class="float-b" />
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>BUILD ON BASE ✦ ONE BLOCK AT A TIME ✦ CODE. BUILD. DEPLOY. ✦ $BUILDERCAT ✦ BUILDER CAT 🐾 ✦&nbsp;</span>
+      <span>BUILD ON BASE ✦ ONE BLOCK AT A TIME ✦ CODE. BUILD. DEPLOY. ✦ $BUILDERCAT ✦ BUILDER CAT 🐾 ✦&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ABOUT / STATS -->
+  <section class="about" id="about">
+    <div class="section-head">
+      <h2>Meet the builder</h2>
+      <p>BuilderCat isn't here to moon and dump. He's here in the hardhat, laptop open, base bottle full — stacking blocks one at a time. A meme with a work ethic.</p>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-num" data-count="1000000000">1B</span>
+        <span class="stat-label">Total Supply</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">Base</span>
+        <span class="stat-label">Blockchain</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">0%</span>
+        <span class="stat-label">Buy / Sell Tax</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Community Owned</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHART -->
+  <section class="chart-section" id="chart">
+    <div class="section-head">
+      <h2>Live Chart</h2>
+      <p>Powered by DexScreener — BuilderCat / WETH on Base.</p>
+    </div>
+    <div class="chart-frame">
+      <div id="dexLoad" class="chart-load">Loading chart…</div>
+      <iframe
+        title="BuilderCat DexScreener chart"
+        src="https://dexscreener.com/base/0x1ba666f7294ad6066caa61b4f74f7973151374cc96da37c59c736ec041295911?embed=1&theme=light&trades=0&info=0"
+        onload="document.getElementById('dexLoad').style.display='none'"
+        loading="lazy"></iframe>
+    </div>
+    <p class="chart-links">
+      <a href="https://dexscreener.com/base/0x1ba666f7294ad6066caa61b4f74f7973151374cc96da37c59c736ec041295911" target="_blank" rel="noopener">Open on DexScreener ↗</a>
+    </p>
+  </section>
+
+  <!-- TOKENOMICS -->
+  <section class="tokenomics" id="tokenomics">
+    <div class="section-head">
+      <h2>Tokenomics</h2>
+      <p>Kept simple, like a good commit.</p>
+    </div>
+    <div class="tok-grid">
+      <div class="tok-card">
+        <span class="tok-k">Total Supply</span>
+        <span class="tok-v">1,000,000,000</span>
+        <span class="tok-sub">One billion $BUILDERCAT — fixed, no minting.</span>
+      </div>
+      <div class="tok-card">
+        <span class="tok-k">Taxes</span>
+        <span class="tok-v">0 / 0</span>
+        <span class="tok-sub">No buy tax. No sell tax. Build freely.</span>
+      </div>
+      <div class="tok-card">
+        <span class="tok-k">Liquidity</span>
+        <span class="tok-v">Locked</span>
+        <span class="tok-sub">Paired on Uniswap, live on Base.</span>
+      </div>
+      <div class="tok-card">
+        <span class="tok-k">Ownership</span>
+        <span class="tok-v">Renounced</span>
+        <span class="tok-sub">Fully community driven, no dev keys.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO BUY -->
+  <section class="buy" id="buy">
+    <div class="section-head">
+      <h2>How to Buy</h2>
+      <p>New to Base? Four blocks and you're in.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="step-n">1</span>
+        <img src="assets/art/thinking.png" alt="" class="step-art" />
+        <h3>Get a wallet</h3>
+        <p>Install Coinbase Wallet or MetaMask and switch the network to <b>Base</b>.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">2</span>
+        <img src="assets/art/build-on-base.png" alt="" class="step-art" />
+        <h3>Fund with ETH</h3>
+        <p>Bridge or buy some ETH on Base to cover your swap and gas.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">3</span>
+        <img src="assets/art/one-block.png" alt="" class="step-art" />
+        <h3>Swap for $BUILDERCAT</h3>
+        <p>Open Uniswap, paste the contract address, and swap ETH for BuilderCat.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">4</span>
+        <img src="assets/art/buildercat.png" alt="" class="step-art" />
+        <h3>Welcome, builder</h3>
+        <p>Hold, meme, and keep building on Base. One block at a time. 🐾</p>
+      </div>
+    </div>
+    <div class="buy-cta">
+      <a class="btn btn-primary btn-lg" href="https://app.uniswap.org/swap?outputCurrency=0xb2000000000000000000000Cc9a0b0D5Ccf89901&chain=base" target="_blank" rel="noopener">Swap on Uniswap ↗</a>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section-head">
+      <h2>The Gallery</h2>
+      <p>Six moods of a cat who never stops shipping. Right-click, save, meme away.</p>
+    </div>
+    <div class="grid">
+      <figure><img src="assets/art/build-on-base.png" alt="BuilderCat coding on a laptop" loading="lazy" /><figcaption>Build on Base</figcaption></figure>
+      <figure><img src="assets/art/lets-build.png" alt="BuilderCat with a base bottle giving a thumbs up" loading="lazy" /><figcaption>Let's Build</figcaption></figure>
+      <figure><img src="assets/art/one-block.png" alt="BuilderCat stacking blocks" loading="lazy" /><figcaption>One Block at a Time</figcaption></figure>
+      <figure><img src="assets/art/thinking.png" alt="BuilderCat thinking about Base" loading="lazy" /><figcaption>Build on Base (thinking)</figcaption></figure>
+      <figure><img src="assets/art/code-build-deploy.png" alt="BuilderCat at a desktop deploying" loading="lazy" /><figcaption>Code. Build. Deploy.</figcaption></figure>
+      <figure><img src="assets/art/buildercat.png" alt="BuilderCat in a Base hoodie" loading="lazy" /><figcaption>Builder Cat 🐾</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo-256.png" alt="BuilderCat" width="48" height="48" />
+        <span>Builder<b>Cat</b></span>
+      </div>
+      <div class="footer-links">
+        <a href="https://x.com/buildercatbase" target="_blank" rel="noopener">𝕏 Twitter</a>
+        <a href="https://dexscreener.com/base/0x1ba666f7294ad6066caa61b4f74f7973151374cc96da37c59c736ec041295911" target="_blank" rel="noopener">DexScreener</a>
+        <a href="https://app.uniswap.org/swap?outputCurrency=0xb2000000000000000000000Cc9a0b0D5Ccf89901&chain=base" target="_blank" rel="noopener">Uniswap</a>
+      </div>
+    </div>
+    <p class="disclaimer">$BUILDERCAT is a meme coin with no intrinsic value or expectation of financial return. There is no formal team or roadmap. It is for entertainment purposes only. Do your own research. Not affiliated with Coinbase or Base.</p>
+    <p class="copy">© 2026 BuilderCat · Built on Base 🔵</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
