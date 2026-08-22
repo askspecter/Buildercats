@@ -223,7 +223,7 @@ figcaption{position:absolute;left:0;right:0;bottom:0;margin:0;padding:1.5rem 1.1
 .footer-brand img{border-radius:12px 8px 12px 8px/8px 12px 8px 12px;border:1.5px solid var(--stroke)}
 .footer-brand b{background:var(--grad-blue);-webkit-background-clip:text;background-clip:text;color:transparent}
 .footer-links{display:flex;flex-wrap:wrap;gap:1.5rem;font-weight:700;font-family:var(--font-hand);font-size:1.14rem}
-.footer-links a{color:var(--text-soft);transition:color .15s}
+.footer-links a{color:var(--text-soft);transition:color .15s;display:inline-flex;align-items:center;gap:.4em}
 .footer-links a:hover{color:#fff}
 .disclaimer{max-width:var(--maxw);margin:2.2rem auto 0;color:var(--text-dim);font-size:.82rem;line-height:1.6;text-align:center;font-family:var(--font-body)}
 .copy{text-align:center;color:var(--text-dim);margin:.9rem 0 0;font-size:.9rem;font-family:var(--font-hand)}
