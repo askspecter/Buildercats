@@ -7,7 +7,7 @@
 :root{
   --maxw:1180px;
   --bw:3px;
-  --font-hand:"Kalam","Bricolage Grotesque",cursive;
+  --font-hand:"Anton","Archivo Black",sans-serif;
   --font-body:"Space Grotesk",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
 
   --blue:#0052ff;
@@ -231,3 +231,9 @@ figcaption{position:absolute;left:0;right:0;bottom:0;margin:0;padding:1.5rem 1.1
   .chart-frame{aspect-ratio:auto;min-height:560px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}}
+
+/* --- display font (Anton): heavy italic caps, arcade look --- */
+h1,h2,.brand,.footer-brand,.marquee-track,.stat-num,.tok-v,.step-n,.btn,.chip,.chip-blue,.badge{
+  font-style:italic;text-transform:uppercase;letter-spacing:.01em;
+}
+.hero h1{letter-spacing:0}
